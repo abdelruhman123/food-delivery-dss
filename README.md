@@ -1,6 +1,6 @@
 # 🚚 Food Delivery Decision Support System
 
-> A production-grade data engineering and ML platform for food delivery operations — built as a TM471 Final Year Project at Arab Open University.
+> A production-grade data engineering and ML platform for food delivery operations 
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://python.org)
 [![dbt](https://img.shields.io/badge/dbt-1.8.7-orange?logo=dbt)](https://getdbt.com)
@@ -27,13 +27,13 @@ The system combines:
 ## 📸 Screenshots
 
 ### System Architecture
-![System Architecture](screenshots/architecture.jpg)
+![System Architecture](screenshots/architecture.jpeg)
 
 ### Manager DSS — Live Orders Map
-![Manager DSS](screenshots/manager_dss.jpg)
+![Manager DSS](screenshots/manager_dss.jpeg)
 
 ### Airflow DAG — All Tasks Successful
-![Airflow DAG](screenshots/airflow_dag.jpg)
+![Airflow DAG](screenshots/airflow_dag.jpeg)
 
 ---
 
@@ -248,6 +248,4 @@ The production model was selected based on data quality reliability — trained 
 
 ---
 
-screenshots/architecture.jpg    
-screenshots/manager_dss.jpg     
-screenshots/airflow_dag.jpg     
+   
