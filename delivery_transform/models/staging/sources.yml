@@ -1,0 +1,103 @@
+version: 2
+
+sources:
+  - name: public
+    schema: public
+    description: >
+      Raw Kaggle food delivery dataset (Gaurav Malik).
+      45,593 delivery orders loaded into PostgreSQL as raw_deliveries.
+      All cleaning, casting, and null handling happens in stg_orders.
+      No pre-computed features — everything is derived in dbt.
+
+    tables:
+      - name: raw_deliveries
+        description: >
+          Raw Kaggle train.csv loaded as-is into PostgreSQL.
+          20 columns — messy types, dirty formats like
+          "(min) 24" for target and "conditions Sunny" for weather.
+          stg_orders is the ONLY model that reads from this source.
+
+        columns:
+
+          - name: id
+            description: "Unique order hex ID e.g. 0x4607"
+            tests:
+              - not_null
+              - unique
+
+          - name: delivery_person_id
+            description: "Driver ID — encodes city code e.g. BANGRES13DEL02"
+            tests:
+              - not_null
+
+          - name: delivery_person_age
+            description: "Driver age stored as TEXT."
+
+          - name: delivery_person_ratings
+            description: "Driver rating 0-5 stored as TEXT."
+
+          - name: restaurant_latitude
+            description: "Restaurant GPS latitude. 3,640 rows have value 0.0 (corrupted)."
+            tests:
+              - not_null
+
+          - name: restaurant_longitude
+            description: "Restaurant GPS longitude."
+            tests:
+              - not_null
+
+          - name: delivery_location_latitude
+            description: "Customer GPS latitude."
+            tests:
+              - not_null
+
+          - name: delivery_location_longitude
+            description: "Customer GPS longitude."
+            tests:
+              - not_null
+
+          - name: order_date
+            description: "Order date — format DD-MM-YYYY stored as TEXT."
+            tests:
+              - not_null
+
+          - name: time_orderd
+            description: "Time order was placed — HH:MM:SS stored as TEXT."
+
+          - name: time_order_picked
+            description: "Time driver picked up the order — HH:MM:SS stored as TEXT."
+
+          - name: weatherconditions
+            description: "Format: conditions Sunny. Extracted to weather_raw in stg_orders."
+            tests:
+              - not_null
+
+          - name: road_traffic_density
+            description: "Traffic level: Low / Medium / High / Jam stored as TEXT."
+            tests:
+              - not_null
+
+          - name: vehicle_condition
+            description: "Vehicle condition score 0-3 stored as TEXT."
+
+          - name: type_of_vehicle
+            description: "motorcycle / scooter / electric_scooter / bicycle"
+
+          - name: type_of_order
+            description: "Snack / Meal / Drinks / Buffet — mapped to restaurant_type in dim_restaurant."
+            tests:
+              - not_null
+
+          - name: multiple_deliveries
+            description: "Number of simultaneous deliveries stored as TEXT. Proxy for order_items."
+
+          - name: festival
+            description: "Yes / No festival flag. Maps to is_ramadan in fct_orders."
+
+          - name: city
+            description: "Metropolitian / Urban / Semi-Urban. Maps to city ML feature."
+
+          - name: time_taken_min
+            description: "Target variable — format: (min) 24 stored as TEXT. Extracted to delivery_time_min in stg_orders."
+            tests:
+              - not_null

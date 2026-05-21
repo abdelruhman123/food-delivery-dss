@@ -1,0 +1,15 @@
+venv/
+models/*.joblib
+data/raw/*.csv
+*.csv
+.env
+*.env
+__pycache__/
+*.pyc
+.kiro/
+logs/
+airflow.db
+airflow.cfg
+.vscode/
+*.DS_Store
+Thumbs.db

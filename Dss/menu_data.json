@@ -1,0 +1,69 @@
+{
+  "restaurant_types": {
+    "Fast Food": {
+      "stations": {
+        "grill": {"chefs": 2},
+        "fryer": {"chefs": 1},
+        "oven": {"chefs": 1},
+        "bar": {"chefs": 1}
+      }
+    },
+    "Fine Dining": {
+      "stations": {
+        "grill": {"chefs": 3},
+        "oven": {"chefs": 2},
+        "pantry": {"chefs": 2},
+        "bar": {"chefs": 1}
+      }
+    },
+    "Casual Dining": {
+      "stations": {
+        "grill": {"chefs": 2},
+        "fryer": {"chefs": 1},
+        "pantry": {"chefs": 2},
+        "bar": {"chefs": 1}
+      }
+    },
+    "Cafe": {
+      "stations": {
+        "bar": {"chefs": 2},
+        "bakery": {"chefs": 1},
+        "grill": {"chefs": 1}
+      }
+    }
+  },
+  "menu_items": {
+    "Burger": {"base_prep_time": 7, "station": "grill", "batch": false},
+    "Cheeseburger": {"base_prep_time": 8, "station": "grill", "batch": false},
+    "Fried Chicken": {"base_prep_time": 12, "station": "fryer", "batch": true, "capacity_per_batch": 10},
+    "Chicken Nuggets": {"base_prep_time": 6, "station": "fryer", "batch": true, "capacity_per_batch": 20},
+    "Fries": {"base_prep_time": 4, "station": "fryer", "batch": true, "capacity_per_batch": 10},
+    "Onion Rings": {"base_prep_time": 5, "station": "fryer", "batch": true, "capacity_per_batch": 15},
+    "Pizza": {"base_prep_time": 10, "station": "oven", "batch": false},
+    "Soft Drink": {"base_prep_time": 2, "station": "bar", "batch": false},
+    "Ribeye Steak": {"base_prep_time": 25, "station": "grill", "batch": false},
+    "Beef Wellington": {"base_prep_time": 35, "station": "oven", "batch": false},
+    "Grilled Salmon": {"base_prep_time": 20, "station": "grill", "batch": false},
+    "Lamb Chops": {"base_prep_time": 22, "station": "grill", "batch": false},
+    "Risotto": {"base_prep_time": 18, "station": "pantry", "batch": false},
+    "Lobster Tail": {"base_prep_time": 25, "station": "pantry", "batch": false},
+    "Gourmet Salad": {"base_prep_time": 10, "station": "pantry", "batch": false},
+    "Truffle Pasta": {"base_prep_time": 15, "station": "pantry", "batch": false},
+    "Pasta Alfredo": {"base_prep_time": 12, "station": "pantry", "batch": false},
+    "Chicken Panne": {"base_prep_time": 14, "station": "fryer", "batch": false},
+    "Club Sandwich": {"base_prep_time": 10, "station": "pantry", "batch": false},
+    "Grilled Chicken": {"base_prep_time": 15, "station": "grill", "batch": false},
+    "Fish and Chips": {"base_prep_time": 13, "station": "fryer", "batch": true, "capacity_per_batch": 4},
+    "Lentil Soup": {"base_prep_time": 6, "station": "pantry", "batch": false},
+    "Tacos": {"base_prep_time": 9, "station": "pantry", "batch": false},
+    "Margherita Pizza": {"base_prep_time": 12, "station": "oven", "batch": false},
+    "Espresso": {"base_prep_time": 3, "station": "bar", "batch": false},
+    "Latte": {"base_prep_time": 5, "station": "bar", "batch": false},
+    "Cappuccino": {"base_prep_time": 5, "station": "bar", "batch": false},
+    "Iced Coffee": {"base_prep_time": 4, "station": "bar", "batch": false},
+    "Croissant": {"base_prep_time": 5, "station": "bakery", "batch": true, "capacity_per_batch": 6},
+    "Cheese Cake": {"base_prep_time": 4, "station": "bakery", "batch": false},
+    "Panini": {"base_prep_time": 8, "station": "grill", "batch": false},
+    "Fresh Juice": {"base_prep_time": 5, "station": "bar", "batch": false}
+  }
+}

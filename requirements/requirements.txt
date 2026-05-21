@@ -1,0 +1,7 @@
+dbt-postgres
+apache-airflow
+pandas
+sqlalchemy
+psycopg2-binary
+scikit-learn
+streamlit
