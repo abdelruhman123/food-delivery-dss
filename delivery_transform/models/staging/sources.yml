@@ -26,7 +26,9 @@ sources:
               - unique
 
           - name: delivery_person_id
-            description: "Driver ID — encodes city code e.g. BANGRES13DEL02"
+            description: "Unique driver identifier encoding city and region codes 
+               Format: {CITY}{REGION}{NUMBER}{ZONE} e.g. CAIRORES13GIZ02 represents Cairo, residential zone, driver 13, Giza delivery area."
+            
             tests:
               - not_null
 
