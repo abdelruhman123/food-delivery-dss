@@ -1,6 +1,9 @@
 """
-Test script to verify Streamlit app setup
-Run this before launching the app
+Test script to verify Streamlit app setup.
+Checks all required packages before launching.
+
+Usage:
+    python test_app.py
 """
 
 import sys
